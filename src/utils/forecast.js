@@ -17,9 +17,11 @@ const forecast = (latitude, longitude, callback) => {
       } else {
         callback(
           undefined,
-          `${body.currently.summary}, temperature: ${body.currently.temperature}, chance of rain: ${
+          `${body.currently.summary}, temperature: ${body.currently.temperature}, chance of rain:${
             body.currently.precipProbability
-          }%`
+          }%, the high is ${body.daily.data[0].temperatureHigh}, the low is ${
+            body.daily.data[0].temperatureLow
+          }`
         );
       }
     }
